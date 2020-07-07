@@ -1,9 +1,11 @@
 import { Router } from "express";
-
+import { getUsers ,getUser,postUser,putUser,deleteUser} from "../controllers/index.controllers";
 const router = Router();
 
-router.get("/test", (req, res) => {
-  res.send("hello wold");
-});
+router.get("/users", getUsers);
+router.get("/users/:id", getUser);
+router.post("/users", postUser);
+router.put("/users/:id", putUser);
+router.delete("/users/:id", deleteUser);
 
 export default router;
